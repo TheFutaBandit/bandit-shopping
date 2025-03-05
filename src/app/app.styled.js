@@ -11,7 +11,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto Condensed', sans-serif;
-    height: 100%;
 `
 
 export const Mainbody_styled = styled.div`
@@ -53,11 +52,4 @@ FooterText.defaultProps = {
     alignment: "flex-start",
 }
 
-/* top */
-
-// position: absolute;
-// width: 137px;
-// height: 26px;
-// left: calc(50% - 137px/2 + 0.5px);
-// top: 158px;
 
