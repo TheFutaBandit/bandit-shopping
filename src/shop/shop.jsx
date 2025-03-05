@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import cart from '../assets/cart.svg';
 import negative from '../assets/negative.svg'
 import positive from '../assets/positive.svg'
@@ -14,65 +14,86 @@ export const Footer = () => {
     )
 }
 
-export const Cart = () => {
+export const Cart = ({counter}) => {
     return (
         <Cart_styled>
             <img src = {cart} />
-            <div className = "cart_counter">0</div>
+            <div className = "cart_counter">{counter}</div>
         </Cart_styled>
     )
 }
 
-export const Card = ({prodLink, prodTitle, prodCost, prodQuantity}) => {
+export const Card = ({
+        incrementCounter, 
+        decrementCounter,
+        prodLink = "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg", 
+        prodTitle = "Mens Casual \nSlim Fit", 
+        prodCost = 500, 
+        prodQuantity = 0,
+    }) => {
+    const[quantity, setQuantity] = useState(0);
+
     return (
         <Card_Styled>
-            <div className = "imageContainer"></div>
+            <div className = "imageContainer">
+                <img src = {prodLink}></img>
+            </div>
             <div className = "contentContainer">
                 <div className = "content">
-                    <FooterText size = "1.1rem" weight = "300">Mens Casual <br />Slim Fit</FooterText>
-                    <FooterText size = "1.1rem" weight = "300">$500</FooterText>
+                    <FooterText size = "1.1rem" weight = "300">{prodTitle}</FooterText>
+                    <FooterText size = "1.1rem" weight = "300">${prodCost}</FooterText>
                 </div>
             </div>
             <div className = "counter">
-                <img src = {negative}></img>
-                <FooterText size = "1.5rem" weight = "100">0</FooterText>
-                <img src = {positive}></img>
+                <img src = {negative} onClick={() => {
+                    decrementCounter()
+                    setQuantity((prev) => prev-1);
+                }}></img>
+                <FooterText size = "1.5rem" weight = "100">{quantity}</FooterText>
+                <img src = {positive} onClick={() => {
+                    incrementCounter()
+                    setQuantity((prev) => prev+1);
+                }}></img>
             </div>
         </Card_Styled>
     )
 }
 
-export const Card_Container = () => {
-    return (
-        <Card_Container_Styled>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-        </Card_Container_Styled>
-    )
-}
-
-export const Shop = () => {
-    return (
-        <>
-            <Cart />
-            <Card_Container />
-            <Footer />
-        </>
-    )
-}
-
-Card.defaultProps = {
-    prodLink: "",
-    prodTitle: "Mens Casual Slim Fit",
-    prodCost: 500,
-    prodQuantity: 0,
-}
-
-Card.PropTypes = {
+Card.propTypes = {
+    incrementCounter: PropTypes.func,
+    decrementCounter: PropTypes.func,
     prodLink: PropTypes.string,
     prodTitle: PropTypes.string,
     prodCost: PropTypes.number,
     prodQuantity: PropTypes.number
 }
+
+export const Card_Container = ({incrementCounter, decrementCounter}) => {
+    return (
+        <Card_Container_Styled>
+            <Card incrementCounter = {incrementCounter} decrementCounter = {decrementCounter}/>
+            <Card incrementCounter = {incrementCounter} decrementCounter = {decrementCounter}/>
+        </Card_Container_Styled>
+    )
+}
+
+export const Shop = () => {
+    const [counter, setCounter] = useState(0);
+
+    function incrementCounter() {
+        setCounter((prev) => prev+1);
+    }
+
+    function decrementCounter() {
+        setCounter((prev) => prev-1);
+    }
+
+    return (
+        <>
+            <Cart counter={counter}/>
+            <Card_Container incrementCounter = {incrementCounter} decrementCounter = {decrementCounter}/>
+            <Footer />
+        </>
+    )
+}
+

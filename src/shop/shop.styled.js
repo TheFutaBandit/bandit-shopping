@@ -43,6 +43,13 @@ export const Card_Styled = styled.div`
     .imageContainer {
         flex: 0 0 184px;
         border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width:100px;
+            height: auto;
+        }
     }
     .contentContainer {
         
@@ -61,6 +68,7 @@ export const Card_Styled = styled.div`
         img {
             height: auto;
             max-width: 27px;
+            cursor: pointer;
         }
     }
     
@@ -70,6 +78,7 @@ export const FooterText = styled.p`
     font-size: ${prop => prop.size};
     font-weight: ${prop => prop.weight};
     margin: 0px;
+    white-space: pre;
 `
 
 export const Footer_Styled = styled.div`
