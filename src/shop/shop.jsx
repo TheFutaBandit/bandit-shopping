@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import cart from '../assets/cart.svg';
 import negative from '../assets/negative.svg'
 import positive from '../assets/positive.svg'
-import { Cart_styled, Card_Container_Styled, FooterText, Footer_Styled, Card_Styled } from './shop.styled.js'
+import { Cart_styled, Card_Container_Styled, FooterText, Footer_Styled, Card_Styled, ContentText } from './shop.styled.js'
 
 export const Footer = () => {
     return (
@@ -18,7 +18,8 @@ export const Cart = ({counter}) => {
     return (
         <Cart_styled>
             <img src = {cart} />
-            <div className = "cart_counter">{counter}</div>
+            <p className = "buy_text">Click To Steal!</p>
+            <div data-testid="cart_counter" className = "cart_counter">{counter}</div>
         </Cart_styled>
     )
 }
@@ -32,6 +33,7 @@ export const Card = ({
         prodQuantity = 0,
     }) => {
     const[quantity, setQuantity] = useState(0);
+    let fontSize = "1.1rem";
 
     return (
         <Card_Styled>
@@ -40,17 +42,19 @@ export const Card = ({
             </div>
             <div className = "contentContainer">
                 <div className = "content">
-                    <FooterText size = "1.1rem" weight = "300">{prodTitle}</FooterText>
-                    <FooterText size = "1.1rem" weight = "300">${prodCost}</FooterText>
+                    <ContentText size = {fontSize} weight = "300">{prodTitle}</ContentText>
+                    <ContentText size = "1.1rem" weight = "300">${prodCost}</ContentText>
                 </div>
             </div>
             <div className = "counter">
-                <img src = {negative} onClick={() => {
-                    decrementCounter()
-                    setQuantity((prev) => prev-1);
+                <img alt="decrement_button" src = {negative} onClick={() => {
+                    if(quantity > 0) {
+                        decrementCounter()
+                        setQuantity((prev) => prev-1);
+                    }
                 }}></img>
-                <FooterText size = "1.5rem" weight = "100">{quantity}</FooterText>
-                <img src = {positive} onClick={() => {
+                <FooterText data-testid = "card_counter" size = "1.5rem" weight = "100">{quantity}</FooterText>
+                <img alt="increment_button" src = {positive} onClick={() => {
                     incrementCounter()
                     setQuantity((prev) => prev+1);
                 }}></img>
@@ -69,10 +73,50 @@ Card.propTypes = {
 }
 
 export const Card_Container = ({incrementCounter, decrementCounter}) => {
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [storeUrl, setStoreUrl] = useState('https://fakestoreapi.com/products');
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await fetch(storeUrl, { mode: "cors" });
+                if(response.status >= 400) {
+                    throw new Error("server error");
+                }
+                const data = await response.json();
+                console.log(data);
+                setProductList(JSON.parse(JSON.stringify(data.slice(0,4))));
+                setLoading(false);
+                
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+        getData();   
+        
+    }, [storeUrl]);
+
+    if(loading) return <p>Loading...</p>;
+    if(error) return <p>A network error was encountered</p>;
+    console.log(productList)
+
     return (
         <Card_Container_Styled>
-            <Card incrementCounter = {incrementCounter} decrementCounter = {decrementCounter}/>
-            <Card incrementCounter = {incrementCounter} decrementCounter = {decrementCounter}/>
+            {productList.map((item) => {
+                return (
+                    <Card 
+                        key = {item.id}
+                        incrementCounter = {incrementCounter} 
+                        decrementCounter = {decrementCounter} 
+                        prodLink = {item.image}
+                        prodCost = {item.price}
+                        prodTitle = {item.title}
+                    />
+                )
+            })}
         </Card_Container_Styled>
     )
 }

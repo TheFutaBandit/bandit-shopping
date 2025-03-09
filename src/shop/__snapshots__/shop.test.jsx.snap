@@ -1,0 +1,143 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shop Render and Card > Renders Shop Page 1`] = `
+<div>
+  <div
+    class="sc-FEMpB eCjMBC"
+  >
+    <img
+      src="data:image/svg+xml,%3csvg%20width='62'%20height='62'%20viewBox='0%200%2062%2062'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.5%205.16666L7.75%2015.5V51.6667C7.75%2053.0369%208.29434%2054.3511%209.26328%2055.32C10.2322%2056.289%2011.5464%2056.8333%2012.9167%2056.8333H49.0833C50.4536%2056.8333%2051.7678%2056.289%2052.7367%2055.32C53.7057%2054.3511%2054.25%2053.0369%2054.25%2051.6667V15.5L46.5%205.16666H15.5Z'%20stroke='black'%20stroke-width='0.416667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M7.75%2015.5H54.25'%20stroke='black'%20stroke-width='0.416667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M41.3334%2025.8333C41.3334%2028.5739%2040.2447%2031.2022%2038.3069%2033.1401C36.369%2035.078%2033.7407%2036.1667%2031.0001%2036.1667C28.2595%2036.1667%2025.6312%2035.078%2023.6933%2033.1401C21.7554%2031.2022%2020.6667%2028.5739%2020.6667%2025.8333'%20stroke='black'%20stroke-width='0.416667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+    />
+    <div
+      class="cart_counter"
+      data-testid="cart_counter"
+    >
+      0
+    </div>
+  </div>
+  <div
+    class="sc-gjcoXW jPFSgd"
+  >
+    <div
+      class="sc-dVBluf bMZbZD"
+    >
+      <div
+        class="imageContainer"
+      >
+        <img
+          src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+        />
+      </div>
+      <div
+        class="contentContainer"
+      >
+        <div
+          class="content"
+        >
+          <p
+            class="sc-fLDLck iiVBBO"
+            weight="300"
+          >
+            Mens Casual 
+Slim Fit
+          </p>
+          <p
+            class="sc-fLDLck iiVBBO"
+            weight="300"
+          >
+            $
+            500
+          </p>
+        </div>
+      </div>
+      <div
+        class="counter"
+      >
+        <img
+          alt="decrement_button"
+          src="data:image/svg+xml,%3csvg%20width='30'%20height='30'%20viewBox='0%200%2030%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='15'%20cy='15'%20r='14.25'%20fill='white'%20stroke='black'%20stroke-width='0.5'/%3e%3cline%20x1='10.25'%20y1='15.75'%20x2='19.75'%20y2='15.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3c/svg%3e"
+        />
+        <p
+          class="sc-fLDLck PSnoQ"
+          data-testid="card_counter"
+          weight="100"
+        >
+          0
+        </p>
+        <img
+          alt="increment_button"
+          src="data:image/svg+xml,%3csvg%20width='30'%20height='30'%20viewBox='0%200%2030%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='15'%20cy='15'%20r='14.25'%20fill='white'%20stroke='black'%20stroke-width='0.5'/%3e%3cline%20x1='10.25'%20y1='14.75'%20x2='19.75'%20y2='14.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3cline%20x1='15.25'%20y1='10.25'%20x2='15.25'%20y2='19.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3c/svg%3e"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-dVBluf bMZbZD"
+    >
+      <div
+        class="imageContainer"
+      >
+        <img
+          src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+        />
+      </div>
+      <div
+        class="contentContainer"
+      >
+        <div
+          class="content"
+        >
+          <p
+            class="sc-fLDLck iiVBBO"
+            weight="300"
+          >
+            Mens Casual 
+Slim Fit
+          </p>
+          <p
+            class="sc-fLDLck iiVBBO"
+            weight="300"
+          >
+            $
+            500
+          </p>
+        </div>
+      </div>
+      <div
+        class="counter"
+      >
+        <img
+          alt="decrement_button"
+          src="data:image/svg+xml,%3csvg%20width='30'%20height='30'%20viewBox='0%200%2030%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='15'%20cy='15'%20r='14.25'%20fill='white'%20stroke='black'%20stroke-width='0.5'/%3e%3cline%20x1='10.25'%20y1='15.75'%20x2='19.75'%20y2='15.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3c/svg%3e"
+        />
+        <p
+          class="sc-fLDLck PSnoQ"
+          data-testid="card_counter"
+          weight="100"
+        >
+          0
+        </p>
+        <img
+          alt="increment_button"
+          src="data:image/svg+xml,%3csvg%20width='30'%20height='30'%20viewBox='0%200%2030%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='15'%20cy='15'%20r='14.25'%20fill='white'%20stroke='black'%20stroke-width='0.5'/%3e%3cline%20x1='10.25'%20y1='14.75'%20x2='19.75'%20y2='14.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3cline%20x1='15.25'%20y1='10.25'%20x2='15.25'%20y2='19.75'%20stroke='black'%20stroke-width='0.5'%20stroke-linecap='round'/%3e%3c/svg%3e"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-dycHyt knBunj"
+  >
+    <p
+      class="sc-fLDLck emOOIz"
+      weight="900"
+    >
+      WE HAVE ALL THE RIGHTS YOU KNOW?
+    </p>
+    <p
+      class="sc-fLDLck gnPpXx"
+      weight="400"
+    >
+      DON’T TRY ANYTHING FUNNY.
+    </p>
+  </div>
+</div>
+`;

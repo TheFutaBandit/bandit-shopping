@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`check home rendering > home render 1`] = `
+<div>
+  <div
+    class="sc-dVBluf eOhEwE"
+  >
+    <img
+      class="sc-fLDLck htvQgj"
+      src="/src/assets/homebodypicture.svg"
+    />
+  </div>
+  <div
+    class="sc-dycHyt ecLbcZ"
+  >
+    <p
+      alignment="center"
+      class="sc-jbAkgO jbgKnx"
+      padding="0px 0px 0px 0px"
+    >
+      SHOP AT THE BANDIT'S STASH
+    </p>
+    <p
+      alignment="flex-start"
+      class="sc-jbAkgO eLSLAn"
+      padding="0px 0px 0px -100px"
+    >
+      SHIT SO CHEAP WE MAKE IT STOLEN
+    </p>
+    <p
+      alignment="flex-end"
+      class="sc-jbAkgO fkEWjQ"
+      padding="0px -50px 0px 0px"
+    >
+      SHIT SO BAD ITS A BANDIT’S DOING
+    </p>
+    <p
+      alignment="center"
+      class="sc-jbAkgO kvZRuN"
+      padding="0px 0px 0px -20px"
+    >
+      THE BANDIT - KINGS OF LEON.
+    </p>
+  </div>
+</div>
+`;
